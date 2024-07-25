@@ -1,0 +1,206 @@
+* { box-sizing: border-box; }
+html {
+  padding: 0;
+  margin: 0;
+  --primary-max: #16324e;
+  --primary: #1c5792;
+  --primary-contrast: #fff;
+  --accent: #ffe5ad;
+  --backdrop: #d9e6f3aa;
+  --border: #b8bec4;
+  --color: rgba(0, 0, 0, .76);
+  --color-min: rgba(0, 0, 0, .56);
+  --shadow: rgba(56, 113, 174, 0.247);
+  background: #fffefc;
+  font-family: sans-serif;
+  color: var(--color);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.banner, body > footer {
+  font-size: .875rem;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: 0 25px;
+}
+
+p {
+  line-height: 1.25;
+  column-count: 1;
+  text-align: justify;
+  hyphens: auto;
+}
+
+:where(.education, .experience) li { margin-top: .5rem }
+:where(.education, .experience) time { font-style: italic }
+:where(.diploma, .position) { font-weight: bold }
+
+h1 { color: var(--primary-max) }
+h2 { color: var(--primary-max) }
+
+a:link, a:visited { color: var(--primary) }
+button {
+  background: none;
+  border-radius: 24px;
+  padding: .25rem 1rem;
+  border: solid 1px transparent;
+  cursor: pointer;
+  color: var(--primary);
+}
+button:where(:hover, :focus) {
+  border-color: var(--primary);
+}
+
+figure { margin: 0 }
+
+body > * { padding: 1rem 0rem } 
+main > *, .banner, body > footer { padding: 1rem 2rem }
+main > :nth-child(even) { background-color: #f5faff; }
+section h2 { margin: 0 0 .5rem; }
+
+header { 
+  text-align: center;
+  margin-bottom: 1rem;
+}
+header h1 { margin: 0 }
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .25rem 1rem;
+  align-items: baseline;
+  margin: 0;
+}
+dt {
+  color: var(--color-min);
+  font-size: .875rem;
+  text-align: right;
+}
+dt::after { content: ': ' }
+dd { margin: 0; }
+
+dialog { 
+  max-width: min(calc(100vw - 4rem), 52ch);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 1px var(--shadow),
+    0 2px 2px var(--shadow),
+    0 4px 4px var(--shadow);
+  padding: 1rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 250ms ease-in allow-discrete;
+}
+dialog h2 { margin: 0; }
+dialog header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+dialog footer { text-align: right }
+
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+  @starting-style {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+dialog::backdrop {
+  background: rgb(85 142 198 / 0);
+  transition: all 250ms allow-discrete;
+}
+dialog[open]::backdrop {
+  background: rgb(85 142 198 / 0.25);
+  backdrop-filter: blur(3px);
+  @starting-style {
+    background-color: rgb(85 142 198 / 0);
+  }
+}
+
+section.skills ul {
+  list-style-type: none;
+  padding: 0;
+  column-width: 9ch;
+  column-gap: 1rem;
+  margin: 0 auto;
+}
+section.skills li { margin-bottom: .5rem }
+section.skills button {
+  background-color: var(--accent);
+  display: block;
+  width: 100%;
+}
+
+blockquote {
+  border-left: solid 3px var(--accent);
+  padding-left: 1rem;
+  quotes: "«" "»" "‹" "›";
+}
+blockquote :first-child { margin-top: 0 }
+blockquote :first-child::before {
+  content: open-quote;
+  color: var(--primary);
+}
+blockquote :last-child { margin-bottom: 0 }
+blockquote :last-child::after {
+  content: close-quote;
+  color: var(--primary);
+}
+figure blockquote { margin: 0 }
+
+section.references figure { margin-bottom: 1rem; }
+blockquote + figcaption { 
+  margin-left: 1rem;
+  text-align: right;
+  font-size: .875rem;
+  color: var(--color-min);
+}
+blockquote + figcaption::before { 
+  content: "~ ";
+  color: var(--primary);
+}
+
+
+@media (min-width: 500px) {
+  body > *:not(dialog):not(footer) {
+    padding: 0 calc((100vw - 600px - 2rem) / 2);
+  }
+  .banner, body > footer { padding: 1rem calc((100vw - 600px - 2rem) / 2) }
+
+  header h1,
+  address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  header h1 :first-child,
+  header h1 :first-child rt,
+  address :first-child {
+    text-align: right;
+  }
+  header h1 :last-child,
+  address :last-child {
+    text-align: left;
+  }
+
+  section.about { display: flow-root }
+  section.about picture {
+    float: left;
+    margin-right: 1rem; 
+  }
+}
+

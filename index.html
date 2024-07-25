@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>&lt;div&gt;ersify your HTML</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <header data-ssml-sub-alias="Diversify">&lt;div&gt;ersify</span> your HTML</header>
+  <main>
+    <header>
+      <h1>
+        <ruby>Schuyler <rt>/ˈskaɪlər/</rt></ruby>
+        <ruby>Louis <rt>/ˈluː.i/</rt></ruby>
+      </h1>
+      <address>
+        <a href="mailto:schuyler@example.com">schuyler@example.com</a>
+        <a href="tel:+11234567890">+1 (123) 456 - 7890</a>
+      </address>
+    </header>
+
+    <section>
+      <dl>
+        <dt>Years of experience</dt>
+        <dd>3+</dd>
+
+        <dt>Type</dt>
+        <dd>Front End</dd>
+
+        <dt>Available for Hire</dt>
+        <dd>Yes</dd>
+
+        <dt>Pronouns</dt>
+        <dd>They/Them</dd>
+      </dl>
+    </section>
+
+    <section class="about">
+      <h2>About</h2>
+      
+      <p>
+        <picture>
+          <source srcset="./img/portrait-500.webp" height="250" width="500" sizes="100vw" media="(max-width: 500px)">
+          <source srcset="./img/portrait-250.webp" height="250" width="250" sizes="250px" media="(min-width: 500px)">
+          <img src="./img/portrait-500.jpeg" alt="portrait of Schuyler Louis">
+        </picture>
+
+        With over three years of dedicated experience in front-end development, Schuyler has honed their skills in creating
+        intuitive and visually appealing user interfaces.
+        Specializing in CSS, UX/UI design, and JavaScript, they have a keen eye for detail and a passion for delivering
+        seamless user experiences.
+        Their expertise extends to crafting responsive designs that ensure optimal viewing across various devices and
+        platforms.
+        They are committed to leveraging the latest technologies and best practices to drive innovation and enhance
+        website functionality.
+        Through their collaborative approach and continuous learning mindset, they strive to contribute to the success
+        of their team and projects.
+      </p>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><button type="button" onclick="openDialog('aria')">ARIA</button></li>
+        <li><button type="button" onclick="openDialog('angular')">Angular</button></li>
+        <li><button type="button" onclick="openDialog('css')"><abbr title="Cascading Style Sheet">CSS</abbr></button></li>
+        <li><button type="button" onclick="openDialog('javascript')">JavaScript</button></li>
+        <li><button type="button" onclick="openDialog('node')">Node</button></li>
+        <li><button type="button" onclick="openDialog('react')">React</button></li>
+        <li><button type="button" onclick="openDialog('sass')">Sass</button></li>
+        <li><button type="button" onclick="openDialog('typescript')">TypeScript</button></li>
+        <li><button type="button" onclick="openDialog('vue')">Vue</button></li>
+      </ul>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <ul>
+        <li><time datetime="2020">2020</time>: <span class="diploma">BS in Computer Science</span> from Some University</li>
+        <li><time datetime="2016">2016</time>: <span class="diploma">HS Diploma</span> with Honors</li>
+      </ul>
+    </section>
+
+    <section class="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li><time datetime="2023-05">May 2023</time> - <time datetime="2024-06">June 2024</time>: <span class="position">Developer</span> at Some Other Company</li>
+        <li><time datetime="2020-06">June 2020</time> - <time datetime="2023-05">May 2023</time>: <span class="position">Junior Developer</span> at Technology and Company</li>
+        <li><time datetime="2022-08">Aug 2022</time> - <time datetime="2020-05">May 2020</time>: <span class="position">Computer Science TA</span> at Some University</li>
+      </ul>
+    </section>
+
+    <section class="references">
+      <h2>References</h2>
+      <figure>
+        <blockquote cite="https://example.com">
+          <p>
+            Schuyler's exceptional talent in front-end development has been a game-changer for our projects.
+            Their deep understanding of CSS, UX/UI design, and JavaScript, combined with a creative mindset, has led to
+            the creation of interfaces that are not only beautiful but highly functional and user-centric.
+            <!-- Schuyler approaches challenges with a solution-oriented mindset, consistently delivering results that exceed
+            our expectations.
+            Their dedication to excellence, collaborative spirit, and commitment to continuous improvement have made
+            them an invaluable asset to our team.
+            I have no doubt that Schuyler will continue to excel and inspire in their future endeavors. -->
+          </p>
+        </blockquote>
+        <figcaption><cite>Alex Rivera, Project Lead at Creative Solutions Ltd.</cite></figcaption>
+      </figure>
+
+      <figure>
+        <blockquote>
+          <p>
+            Schuyler consistently exceeds expectations with their innovative approach to front-end development.
+            Their mastery in CSS, UX/UI design, and JavaScript not only revolutionized our project workflows but also
+            significantly improved our end-user satisfaction.
+            <!-- Schuyler's ability to translate complex requirements into seamless, user-friendly interfaces is truly
+            remarkable.
+            They are not just a developer but a visionary in their field, always ready to explore new technologies and
+            methodologies to push the boundaries of what's possible.
+            Working alongside Schuyler has been an inspiring journey, and I am confident they will continue to make a
+            profound impact in any endeavor they pursue. -->
+          </p>
+        </blockquote>
+        <figcaption><cite>Jane Smith, Senior Developer at Tech Innovations Inc.</cite></figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <footer>
+    Last Updated: <time datetime="2024-07-21">July 21<sup>st</sup> 2024</time>
+  </footer>
+
+  <dialog id="descriptionDialog">
+    <header>
+      <h2></h2>
+      <button type="button" onclick="closeDialog()" autofocus>Close</button>
+    </header>
+    <div class="body">
+      <p>
+        <dfn></dfn>: <span></span>
+      </p>
+      <footer class="link"></footer>
+    </div>
+  </dialog>
+
+  <script src="./script.js" defer></script>
+
+</body>
+
+</html>

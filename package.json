@@ -1,0 +1,13 @@
+{
+  "name": "diversify-html",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=8080"
+  },
+  "author": "Martine Dowden",
+  "repository": "https://github.com/martine-dowden/diversify-html",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
